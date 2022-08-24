@@ -1,6 +1,7 @@
 import 'package:ecommerce/app/auth_widget.dart';
 import 'package:ecommerce/app/pages/admin/admin_home.dart';
 import 'package:ecommerce/app/pages/auth/sign_in_page.dart';
+import 'package:ecommerce/app/pages/user/home_user.dart';
 import 'package:ecommerce/app/providers.dart';
 import 'package:ecommerce/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -29,20 +30,22 @@ class MyApp extends ConsumerWidget {
         ),
         home: AuthWidget(
             nonSignedInBuilder: (_) => const SignInPage(),
-            signedInBuilder: (context) =>  Scaffold(
-                  body: Center(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Text("Signed In"),
-                        const SizedBox(height: 25,),
-                        ElevatedButton(onPressed: (){
-                          ref.read(firebaseAuthProvider).signOut();
-                        }, child: const Text("Sign out"))
-                      ],
-                    ),
-                  ),
-                ), adminSignedInBuilder: (BuildContext context) { 
+            signedInBuilder: (context) => const UserHome(),
+            //  Scaffold(
+            //       body: Center(
+            //         child: Column(
+            //           mainAxisSize: MainAxisSize.min,
+            //           children: [
+            //             const Text("Signed In"),
+            //             const SizedBox(height: 25,),
+            //             ElevatedButton(onPressed: (){
+            //               ref.read(firebaseAuthProvider).signOut();
+            //             }, child: const Text("Sign out"))
+            //           ],
+            //         ),
+            //       ),
+            //     ),
+                 adminSignedInBuilder: (BuildContext context) { 
                   return const AdminHome();
                  },));
   }

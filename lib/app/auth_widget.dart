@@ -18,7 +18,7 @@ class AuthWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authStateChanges = ref.watch(authStateChangesProvider);
-    const adminEmail = "admin@admin.com"; // store this somewhere else
+    const adminEmail = "admin@admin.com"; 
     return authStateChanges.when(
       data: (user) => user != null
           ? user.email == adminEmail
