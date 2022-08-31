@@ -9,7 +9,7 @@ class ProductBanner extends StatelessWidget {
       height: 175,
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
-        gradient: const LinearGradient(colors: [Color.fromARGB(255, 89, 184, 105), Colors.black],),
+        gradient: const LinearGradient(colors: [Color.fromARGB(255, 0, 255, 42), Colors.black],),
         borderRadius: BorderRadius.circular(15)
       ),
       child: Row(
