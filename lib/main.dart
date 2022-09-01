@@ -2,7 +2,7 @@ import 'package:ecommerce/app/auth_widget.dart';
 import 'package:ecommerce/app/pages/admin/admin_home.dart';
 import 'package:ecommerce/app/pages/auth/sign_in_page.dart';
 import 'package:ecommerce/app/pages/user/home_user.dart';
-import 'package:ecommerce/app/providers.dart';
+//import 'package:ecommerce/app/providers.dart';
 import 'package:ecommerce/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

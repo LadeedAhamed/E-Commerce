@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:ecommerce/app/pages/user/user_bag.dart';
+import 'package:ecommerce/app/providers.dart';
 import 'package:ecommerce/models/product_model.dart';
 import 'package:ecommerce/widgets/user_top_bar.dart';
 import 'package:flutter/material.dart';
@@ -65,43 +67,60 @@ class ProductDetails extends ConsumerWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 18),
             ),
-            const SizedBox(height: 5,),
-            Text(product.description,style: const TextStyle(
-              color: Colors.grey,
-              fontWeight: FontWeight.w400,
-              fontSize: 14
-            ),),
-            const SizedBox(height: 15,),
+            const SizedBox(
+              height: 5,
+            ),
+            Text(
+              product.description,
+              style: const TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text("Price",style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 16
-                ),),
-                Text("\$${product.price}",style:const  TextStyle(color: Colors.black,
-                fontWeight: FontWeight.w400,
-                fontSize: 16),),
-                const SizedBox(height: 25,),
+                const Text(
+                  "Price",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16),
+                ),
+                Text(
+                  "\$${product.price}",
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16),
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
               ],
             ),
             GestureDetector(
-              onTap: (){},
+              onTap: () {
+                ref.read(bagProvider).addProduct(product);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const UserBag()));
+              },
               child: Container(
                 width: double.infinity,
                 height: 50,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary,
-                  borderRadius: BorderRadius.circular(10)
-                ),
-                child:const Center(
-                  child: Text("Add to Bag",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18
-                  ),),
+                    color: Theme.of(context).colorScheme.primary,
+                    borderRadius: BorderRadius.circular(10)),
+                child: const Center(
+                  child: Text(
+                    "Add to Bag",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),
+                  ),
                 ),
               ),
             )
