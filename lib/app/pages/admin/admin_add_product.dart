@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:ecommerce/app/providers.dart';
 import 'package:ecommerce/models/product_model.dart';
 import 'package:ecommerce/utils/snackbars.dart';

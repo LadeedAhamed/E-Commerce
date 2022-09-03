@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:ecommerce/app/pages/user/user_bag.dart';
 import 'package:ecommerce/app/providers.dart';
 import 'package:ecommerce/models/product_model.dart';
