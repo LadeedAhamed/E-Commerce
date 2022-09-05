@@ -65,6 +65,8 @@ class UserBag extends ConsumerWidget {
                             user.value!, userBag.totalPrice);
 
                         if (!result.isError) {
+                          ref.read(databaseProvider)!.saveOrder(
+                              result.payIntentId!, userBag.productsBag);
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(content: Text('Payment completed!')),
                           );
